@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MonTirageComponent } from './mon-tirage/mon-tirage.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MonTirageComponent
   ],
   imports: [
     BrowserModule,
