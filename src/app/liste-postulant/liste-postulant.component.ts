@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-postulant',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListePostulantComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  onSuivant(): void {
+    this.router.navigateByUrl('')
+}
+
+onPrecedent(): void {
+  this.router.navigateByUrl('')
+}
 
 }

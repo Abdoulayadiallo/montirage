@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-tirage',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TirageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  onlistetrier(): void {
+    this.router.navigateByUrl('PostulantTriées')
+}
+
+onImporter(): void {
+  this.router.navigateByUrl('')
+}
 }
