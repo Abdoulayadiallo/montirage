@@ -9,9 +9,11 @@ import { ListePostulantComponent } from './liste-postulant/liste-postulant.compo
 import { TirageComponent } from './tirage/tirage.component';
 import { DetailsTirageComponent } from './details-tirage/details-tirage.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
+     // import HttpClientModule after BrowserModule.
     AppComponent,
     MonTirageComponent,
     HeaderComponent,
@@ -21,6 +23,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     LandingPageComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],
