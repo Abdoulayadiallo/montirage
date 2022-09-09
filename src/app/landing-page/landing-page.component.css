@@ -1,9 +1,9 @@
  .landing-block {
   position: absolute;
-  top: 55%;
+  /*top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+*/}
 .landing-block img{
 width: 100%;
 margin: 0 40px;
@@ -20,3 +20,23 @@ margin: 0 40px;
     display: flex;
     justify-content: space-between;
 }  
+
+h1{
+  width: 100%;
+  background-color: #555;
+}
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #fff;
+  line-height: 200px;
+  text-align: center;
+  background: #555;
+}
+.element1{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
