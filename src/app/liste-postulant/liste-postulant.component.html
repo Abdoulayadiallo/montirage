@@ -1,26 +1,26 @@
 
+<div class="container">
+  <h2>La liste des Postulants</h2>
 
-<h2>La liste des Postulants</h2>
-
-<table class ="">
-  <thead>
-    <tr>
-      <th>N° </th>
-      <th>Nom</th>
-      <th>Prenom</th>
-      <th>Email</th>
-      <th>Numero</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let postulant of postulants">
-      <td>{{postulant.id_postulant}}</td>
-      <td>{{postulant.nom}}</td>
-      <td>{{postulant.prenom}}</td>
-      <td>{{postulant.email}}</td>
-      <td>{{postulant.numero}}</td>
-    </tr>
-  </tbody>
-</table>
-
+  <table class ="table">
+    <thead>
+      <tr>
+        <th> N° </th>
+        <th> Nom</th>
+        <th> Prenom</th>
+        <th> Email</th>
+        <th> Numero</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let postulant of postulants" >
+        <td>{{postulant.id_postulant}}</td>
+        <td>{{postulant.nom}}</td>
+        <td>{{postulant.prenom}}</td>
+        <td>{{postulant.email}}</td>
+        <td>{{postulant.numero}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 

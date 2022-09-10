@@ -1,5 +1,5 @@
 export class Postulant {
-    id_postulant?: number;
+    id_postulant!: number;
     nom!: string;
     prenom!: string;
     email!: string;
