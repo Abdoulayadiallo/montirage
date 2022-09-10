@@ -14,14 +14,13 @@ export class ListePostulantComponent implements OnInit {
   postulants!: Postulant[];
   constructor(private postulantService: PostulantService) { }
   
-  ngOnInit() {
-    console.log("On init...")
+  ngOnInit():void {
     this.getPostulants();
   }
 
-getPostulants(){
+private getPostulants(){
   this.postulantService.getPostulants().subscribe(data => {
-    this.postulants =data;
+  this.postulants = data;
   })
   }
 }

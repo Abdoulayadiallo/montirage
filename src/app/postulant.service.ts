@@ -9,12 +9,12 @@ import { Postulant } from 'src/models/postulant';
 export class PostulantService {
 
   
-  readonly baseUrl = "http://localhost:8080/API/Postulant/Afficher";
+  private baseUrl = "http://localhost:8080/API/Postulant/Afficher";
 
   constructor(private httpClient: HttpClient ) { }
 
   getPostulants() : Observable<Postulant[]>{
-    return this.httpClient.get<Postulant[]>("${this.baseUrl}");
+    return this.httpClient.get<Postulant[]>('${this.baseUrl}');
   }
   
 }
