@@ -20,3 +20,30 @@ margin: 0 40px;
     display: flex;
     justify-content: space-between;
 }  
+
+table
+{
+    border-collapse: collapse;
+    
+}
+td, th /* Mettre une bordure sur les td ET les th */
+{
+  border: 1px solid black;
+}
+
+th {
+  background-color: #555;
+}
+.element1, .element2, .element3 {
+  border: 3px #000 solid;
+}
+
+#conteneur
+{
+    display: flex;
+}
+
+.element
+{
+    margin: auto;
+}
