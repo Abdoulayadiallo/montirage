@@ -1,4 +1,4 @@
- .landing-block {
+landing-block {
   position: absolute;
   /*top: 55%;
   left: 50%;
@@ -18,36 +18,12 @@ margin: 0 40px;
 #conteneur
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    
 }  
 
-<<<<<<< HEAD
-table
-{
-    border-collapse: collapse;
-    
-}
-td, th /* Mettre une bordure sur les td ET les th */
-{
-  border: 1px solid black;
-}
 
-th {
-  background-color: #555;
-}
-.element1, .element2, .element3 {
-  border: 3px #000 solid;
-}
-
-#conteneur
-{
-    display: flex;
-}
-
-.element
-{
-    margin: auto;
-=======
 h1{
   width: 100%;
   background-color: #555;
@@ -61,10 +37,27 @@ h1{
   line-height: 200px;
   text-align: center;
   background: #555;
+  align-content: center;
+  margin: auto;
 }
-.element1{
-  display: flex;
-  justify-content: center;
-  align-items:center;
->>>>>>> e7047e807be7ebb7c57e29b02e1f5d9a1e4f2b22
+.element {
+  border: 3px #555 solid;
+  flex-direction: column;
+  box-shadow:-15px 15px rgba(5, 5, 5, 0.25);
+  margin: 2%;
+  padding: 2%;
 }
+
+table
+{
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+}
+td, th
+{
+    border: 1px solid black;
+}
+img{ 
+  width:100%;
+  height:auto;
+}
+

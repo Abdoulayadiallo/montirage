@@ -1,4 +1,5 @@
-<div class="container">
+<body>
+<div id="container">
   <div class="formulaire">
       <div class="container">
         <form>
@@ -8,7 +9,13 @@
           </div>
           <div>
             <label for="libelle-liste">Libellé Liste: </label>  
-            <input type="text" id="libelle" name="libelle"/> <br/>
+            <select name="Libellé" id="id-liste">
+              <option value="choix">Fait ton choix</option>
+              <option value="liste1">Liste1</option>
+              <option value="liste1">Liste2</option>
+              <option value="liste1">Liste3</option>
+              <option value="liste1">Liste4</option>
+            </select>
           </div>
           <div>
             <label for="libelle-liste">Nombre de Postulant à tirer: </label>  
@@ -16,12 +23,12 @@
           </div>
         </form>
       </div>
-      <div>
-        <button (click)="onImporter()">Importer Une Liste</button>
-        <button (click)="onlistetrier()">Tire Au Sort</button>
-      </div>
-    
   </div>
+  </div>
+  <div class="mybutton">
+    <p class="import"><button (click)="onImporter()">Importer Une Liste</button></p>
+   <p class="triées"><button (click)="onlistetrier()">Tire Au Sort</button></p>
 </div>
+
 
   
