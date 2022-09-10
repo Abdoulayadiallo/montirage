@@ -1,4 +1,4 @@
- .landing-block {
+landing-block {
   position: absolute;
   /*top: 55%;
   left: 50%;
@@ -18,8 +18,11 @@ margin: 0 40px;
 #conteneur
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    
 }  
+
 
 h1{
   width: 100%;
@@ -34,9 +37,27 @@ h1{
   line-height: 200px;
   text-align: center;
   background: #555;
+  align-content: center;
+  margin: auto;
 }
-.element1{
-  display: flex;
-  justify-content: center;
-  align-items:center;
+.element {
+  border: 3px #555 solid;
+  flex-direction: column;
+  box-shadow:-15px 15px rgba(5, 5, 5, 0.25);
+  margin: 2%;
+  padding: 2%;
 }
+
+table
+{
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+}
+td, th
+{
+    border: 1px solid black;
+}
+img{ 
+  width:100%;
+  height:auto;
+}
+
