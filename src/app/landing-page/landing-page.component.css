@@ -1,9 +1,9 @@
  .landing-block {
   position: absolute;
-  top: 55%;
+  /*top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+*/}
 .landing-block img{
 width: 100%;
 margin: 0 40px;
@@ -21,6 +21,7 @@ margin: 0 40px;
     justify-content: space-between;
 }  
 
+<<<<<<< HEAD
 table
 {
     border-collapse: collapse;
@@ -46,4 +47,24 @@ th {
 .element
 {
     margin: auto;
+=======
+h1{
+  width: 100%;
+  background-color: #555;
+}
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #fff;
+  line-height: 200px;
+  text-align: center;
+  background: #555;
+}
+.element1{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+>>>>>>> e7047e807be7ebb7c57e29b02e1f5d9a1e4f2b22
 }

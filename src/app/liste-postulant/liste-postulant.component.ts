@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { Postulant } from 'src/models/postulant';
+import { PostulantService } from '../postulant.service';
+
 
 @Component({
   selector: 'app-liste-postulant',
   templateUrl: './liste-postulant.component.html',
-  styleUrls: ['./liste-postulant.component.css']
+  styleUrls: ['./liste-postulant.component.css'],
 })
 export class ListePostulantComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
+  postulants!: Postulant[];
+  constructor(private postulantService: PostulantService) { }
+  
+  ngOnInit():void {
+    this.getPostulants();
   }
 
-  onSuivant(): void {
-    this.router.navigateByUrl('')
-}
-
-onPrecedent(): void {
-  this.router.navigateByUrl('')
-}
-
+private getPostulants(){
+  this.postulantService.getPostulants().subscribe(data => {
+  this.postulants = data;
+  })
+  }
 }
