@@ -8,7 +8,7 @@ import { Postulant } from 'src/models/postulant';
   providedIn: 'root'
 })
 export class PostulantService {
-  private baseUrl = 'http://localhost:8082/API/Postulant/Afficher';
+  private baseUrl = 'http://localhost:8080/API/Postulant/Afficher';
 
   constructor(private httpClient: HttpClient) { }
   getPostulantsList(): Observable<Postulant[]> {
