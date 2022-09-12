@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Postulant } from 'src/models/postulant';
+import { Listepostulant } from 'src/models/listepostulant';
+import { Tirage } from 'src/models/tirage';
+import { ListepostulantService } from '../services/listepostulant.service';
+import { TirageService } from '../services/tirage.service';
 
 
 @Component({
@@ -10,15 +13,29 @@ import { Postulant } from 'src/models/postulant';
 })
 export class TirageComponent implements OnInit {
 
-  postulants: Postulant = new Postulant();
+  tirage: Tirage = new Tirage();
+  tirages!: Tirage[];
+  listepostulants!: Listepostulant[];
   
-  constructor(private router: Router) { }
+  constructor(private router: Router,private tirageService:TirageService,private listepostulantService: ListepostulantService) { }
 
   ngOnInit(): void {
+    this.getTirage();
+    this.getListePostulant();
+  }
+  private getTirage(){
+    this.tirageService.getTirageList().subscribe(data => {
+      this.tirages = data;
+    })
+  }
+  private getListePostulant(){
+    this.listepostulantService.getPostulantList().subscribe(data => {
+      this.listepostulants = data;
+    })
   }
 
   onSubmit(){
-    
+    console.log(this.tirage);
   }
 
   onlistetrier(): void {
