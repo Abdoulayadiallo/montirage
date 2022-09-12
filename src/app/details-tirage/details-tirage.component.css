@@ -1,0 +1,13 @@
+h1{
+    background-color: #555;
+    color: #FFF;
+    text-align: center;
+    width: 50%;
+    border-radius: 20px / 10px;
+    
+}
+.entete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
