@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Tirage } from 'src/models/tirage';
+import { TirageService } from '../services/tirage.service';
 
 @Component({
   selector: 'app-details-tirage',
@@ -7,10 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./details-tirage.component.css']
 })
 export class DetailsTirageComponent implements OnInit {
+  tirages!: Tirage[];
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private tirageService:TirageService) { }
 
   ngOnInit(): void {
+    this.getTirage();
+  }
+  private getTirage(){
+    this.tirageService.getTirageList().subscribe(data => {
+      this.tirages = data;
+    })
   }
 
   onSuivant(): void {
