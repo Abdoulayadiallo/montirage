@@ -21,7 +21,7 @@ button {
   font-weight: 500;
   color: #FFF;
 }
-  active {
+  .active {
     transform: translate(1px, 1px);
     box-shadow: lightgray 0 0 5px;
   }

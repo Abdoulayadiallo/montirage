@@ -27,5 +27,15 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-
+}
+.svt{
+    margin: 1.5rem 0;
+    border: #555;
+    border-radius:10px
+}
+.pcd{
+    margin: 1.5rem 0;
+    margin-left: 75%;
+    border: #555;
+    border-radius:10px
 }
