@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Postulant } from 'src/models/postulant';
 
 
 @Component({
@@ -9,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class TirageComponent implements OnInit {
 
+  postulants: Postulant = new Postulant();
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    
   }
 
   onlistetrier(): void {

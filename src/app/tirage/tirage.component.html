@@ -2,10 +2,11 @@
 <div id="container">
   <div class="formulaire">
       <div class="container">
-        <form class="monForm">
+        <form (ngSubmit)= "onSubmit()" class="monForm">
           <div>
             <label for="libelle-tirage">Libellé Tirage: </label>  
-            <input type="text" id="libelle-tirage" name="libelle-tirage"/>  
+            <input type="text" id="libelle-tirage" name="libelle-tirage" 
+            [/>  
           </div>
           <div>
             <label for="libelle-liste">Libellé Liste: </label>  
