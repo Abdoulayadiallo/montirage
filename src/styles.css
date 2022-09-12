@@ -25,3 +25,17 @@ button {
     transform: translate(1px, 1px);
     box-shadow: lightgray 0 0 5px;
   }
+  @media screen and (max-width: 1024px){
+    h1{
+      color: #339;
+    }
+    *{
+      width: auto;
+    }
+    nav ul {
+      flex-direction: column;
+    }
+    img{
+      display: none;
+    }
+  }
