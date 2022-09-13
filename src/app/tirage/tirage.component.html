@@ -6,28 +6,26 @@
           <div>
             <label for="libelle-tirage">Libellé Tirage: </label>  
             <input type="text" id="libelle-tirage" name="libelle-tirage" 
-            [/>  
+            [(ngModel)]= "tirage.libele" />  
           </div>
           <div>
             <label for="libelle-liste">Libellé Liste: </label>  
             <select name="Libellé" id="id-liste"><br>
               <option value="choix">Fait ton choix</option><br>
-              <option value="liste1">Liste1</option>
-              <option value="liste1">Liste2</option>
-              <option value="liste1">Liste3</option>
-              <option value="liste1">Liste4</option>
+              <option *ngFor= "let listepostulant of listepostulants" [ngValue]="listepostulant.id_liste_postulant">{{listepostulant.libele}}</option>
             </select>
           </div>
           <div>
             <label for="libelle-liste">Nombre de Postulant: </label>
-            <input type="number" id="nombre" name="nombre"/> <br/>  
+            <input type="number" id="nombre" name="nombre" 
+            [(ngModel)]= "tirage.n_tirage"/> <br/>  
           </div>
         </form>
       </div>
   </div>
   </div>
   <div class="bton"><div class="import"><button (click)="onImporter()">Importer Une Liste</button></div>
-    <div class="tries"><button (click)="onlistetrier()">Tire Au Sort</button></div></div>
+  <div class="tries"><button (click)="onlistetrier()" type="submit">Tire Au Sort</button></div></div>
   
 
   
