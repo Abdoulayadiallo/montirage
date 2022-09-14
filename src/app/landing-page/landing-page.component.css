@@ -87,15 +87,12 @@ font-size: 16px;
   background-color: #555;
   color: #fff;
 }
-.s{
-  border: #555;
-  border-radius: 10%;
-  margin: 1.5rem 0;
-  margin-left: 72%;
+.bt{
+  border: 1px  solid #555;
+  padding: 20px;
 }
-.p{
-  border: #555;
-  border-radius: 10%;
-  margin: 1.5rem 0;
-  margin-left: 5%;
+a{
+  background-color: #555;
+  text-decoration: none;
+  padding: 5px;
 }

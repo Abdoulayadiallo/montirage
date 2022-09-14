@@ -42,3 +42,14 @@ h1{
     margin: 1.5rem 0;
     margin-left: 5%;
 }
+.containe{
+    background-position: center;
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+}
+.pagination, .containe, .li{
+    list-style: none;
+    display: inline;
+}

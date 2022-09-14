@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Postulant } from 'src/models/postulant';
-import { PostulantService } from '../postulant.service';
 import { TirageService } from '../services/tirage.service';
 
 @Component({
@@ -10,21 +8,14 @@ import { TirageService } from '../services/tirage.service';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+    
   
   nombre : any;
-  postulant: Postulant= new Postulant();
-  postulants!: Postulant[];
   constructor(private router:Router,
-     private tirageService:TirageService,private postulantService:PostulantService) { }
+     private tirageService:TirageService,
+     private activatroute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getPostulants()
-  }
-
-  private getPostulants(){
-    this.postulantService.getPostulantsList().subscribe(data => {
-      this.postulants = data;
-    });
   }
 
   getNomre(){
