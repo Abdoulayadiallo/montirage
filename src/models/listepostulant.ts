@@ -1,5 +1,5 @@
 export class Listepostulant {
 id_liste_postulant!:number;
-date_liste!:Date;
+dateListe!:Date;
 libele!:string;
 }

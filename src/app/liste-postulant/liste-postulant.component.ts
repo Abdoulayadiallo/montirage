@@ -22,6 +22,7 @@ export class ListePostulantComponent implements OnInit {
       this.postulants = data;
     });
   }
+
 }
 
 

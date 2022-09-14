@@ -10,9 +10,8 @@
           </div>
           <div>
             <label for="libelle-liste">Libellé Liste: </label>  
-            <select name="Libellé" id="id-liste"><br>
-              <option value="choix">Fait ton choix</option><br>
-              <option *ngFor= "let listepostulant of listepostulants" [ngValue]="listepostulant.id_liste_postulant">{{listepostulant.libele}}</option>
+            <select [(ngModel)]="choix" name="Libellé" id="id-liste"><br>
+              <option *ngFor= "let listepostulant of listepostulants" [ngValue]="listepostulant.libele">{{listepostulant.libele}}</option>
             </select>
           </div>
           <div>
@@ -20,6 +19,7 @@
             <input type="number" id="nombre" name="nombre" 
             [(ngModel)]= "tirage.n_tirage"/> <br/>  
           </div>
+          <button type="submit">Tirer au sort</button>
         </form>
       </div>
   </div>

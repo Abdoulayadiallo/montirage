@@ -21,6 +21,11 @@ export class DetailsTirageComponent implements OnInit {
       this.tirages = data;
     })
   }
+  //Compter tirage
+  get totalRows(): number {
+    return this.tirages.length;
+  }
+
 
   onSuivant(): void {
       this.router.navigateByUrl('')
