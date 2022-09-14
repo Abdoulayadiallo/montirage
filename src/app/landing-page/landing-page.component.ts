@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+
+import { Tirage } from 'src/models/tirage';
+
+import {/* ActivatedRoute,*/ Router } from '@angular/router';
+//import { Postulant } from 'src/models/postulant';
+//import { PostulantService } from '../postulant.service';
+
 import { TirageService } from '../services/tirage.service';
 
 @Component({
@@ -9,6 +15,23 @@ import { TirageService } from '../services/tirage.service';
 })
 export class LandingPageComponent implements OnInit {
     
+
+  tirages!: Tirage[];
+
+
+  constructor(private router:Router,
+    private tirageService:TirageService) { }
+
+  ngOnInit(): void {
+    this.getTirage();
+  }
+  private getTirage(){
+    this.tirageService.getTirageList().subscribe(data => {
+      this.tirages = data;
+/*
+
+
+
   
   nombre : any;
   constructor(private router:Router,
@@ -18,9 +41,7 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getNomre(){
-    this.tirageService.getCompteTirage().subscribe(data => {
-      this.nombre = data;
+*/
     })
   }
   onSuivant(): void {
@@ -34,4 +55,8 @@ ngVoir(): void{
   this.router.navigateByUrl('listePostulant/:libelle')
 }
 
+  //Compter le nombre tolal de tirage
+  get totalRows(): number {
+    return this.tirages.length;
+  }
 }

@@ -34,6 +34,8 @@ export class ListePostulantComponent implements OnInit {
       this.postulants = data;
     });
   }
+
+
  
 
   onSuivant(): void {
@@ -43,6 +45,7 @@ export class ListePostulantComponent implements OnInit {
 onPrecedent(): void {
   this.router.navigateByUrl('')
 }
+
 }
 
 

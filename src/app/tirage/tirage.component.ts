@@ -15,6 +15,8 @@ import * as xlsx from 'xlsx';
 export class TirageComponent implements OnInit {
 
   tirage: Tirage = new Tirage();
+  choix:any;
+  listepostulant: Listepostulant = new Listepostulant()
   tirages!: Tirage[];
   listepostulants!: Listepostulant[];
   postulant!: Postulant[];
@@ -35,9 +37,23 @@ export class TirageComponent implements OnInit {
       this.listepostulants = data;
     })
   }
+  saveTirage(){
+    this.tirageService.CreateTirage(this.tirage,this.choix,this.tirage.n_tirage).subscribe(data => {
+      console.log(data);
+    },
+    error => console.log(error));
+
+  }
+  gotoTirageList(){
+    this.router.navigate([`/detailsTirage`])
+  }
+
+
 
   onSubmit(){
     console.log(this.tirage);
+    this.saveTirage();
+    console.log(this.choix)
   }
 
   onlistetrier(): void {
