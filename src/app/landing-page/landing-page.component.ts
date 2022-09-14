@@ -7,6 +7,8 @@ import {/* ActivatedRoute,*/ Router } from '@angular/router';
 //import { PostulantService } from '../postulant.service';
 
 import { TirageService } from '../services/tirage.service';
+import { Listepostulant } from 'src/models/listepostulant';
+import { Postulant } from 'src/models/postulant';
 
 @Component({
   selector: 'app-landing-page',
@@ -17,6 +19,8 @@ export class LandingPageComponent implements OnInit {
     
 
   tirages!: Tirage[];
+  listePostulant!: Listepostulant[];
+  postulant!: Postulant[];
 
 
   constructor(private router:Router,

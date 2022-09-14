@@ -60,4 +60,14 @@ form{
   width: 20;
   height: 30;
  }
- 
+ .fomrtImport{
+  border: #555 solid;
+  width: 600px;
+height: 400px;
+margin-left: 30%;
+background-color: #555;
+font-size: 20px;
+align-content: center;
+margin-top: 5%;
+border-radius: 80px / 90px;
+ }

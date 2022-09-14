@@ -49,7 +49,13 @@ h1{
     justify-content: center;
     text-align: center;
 }
-.pagination, .containe, .li{
+.pagination, .containe, li{
     list-style: none;
     display: inline;
+    border-radius: 2px;
+}
+.containe, .pagination li a{
+    color: #fff;
+    position: relative;
+    text-decoration: none;
 }
