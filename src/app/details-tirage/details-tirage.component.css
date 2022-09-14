@@ -20,12 +20,22 @@ h1{
     color: #FFF;
     text-align: center;
     width: 50%;
-    border-radius: 20px / 10px;
+    border-radius: 10px;
     
 }
 .entete {
     display: flex;
     justify-content: center;
     align-items: center;
-
+}
+.s{
+    border: #555;
+    border-radius: 10%;
+    margin: 1.5rem 0;
+    margin-left: 70%;
+}
+.p{
+    border: #555;
+    border-radius: 10%;
+    margin: 1.5rem 0;
 }

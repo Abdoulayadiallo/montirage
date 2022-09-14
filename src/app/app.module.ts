@@ -14,6 +14,7 @@ import { PageAfficherTirageComponent } from './page-afficher-tirage/page-affiche
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PostulantComponent } from './postulant/postulant.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     TirageComponent,
     DetailsTirageComponent,
     LandingPageComponent,
-    PageAfficherTirageComponent
+    PageAfficherTirageComponent,
+    PostulantComponent,
   ],
   imports: [
     HttpClientModule,

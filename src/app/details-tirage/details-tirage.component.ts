@@ -11,7 +11,8 @@ import { TirageService } from '../services/tirage.service';
 export class DetailsTirageComponent implements OnInit {
   tirages!: Tirage[];
 
-  constructor(private router:Router,private tirageService:TirageService) { }
+  constructor(private router:Router,
+    private tirageService:TirageService) { }
 
   ngOnInit(): void {
     this.getTirage();

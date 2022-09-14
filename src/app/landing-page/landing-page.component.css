@@ -1,5 +1,6 @@
 landing-block {
-  position: absolute;
+  
+  position: fixed;
   border-radius: 20px / 10px;
 }
 .landing-block img{
@@ -85,4 +86,16 @@ font-size: 16px;
 .table thead{
   background-color: #555;
   color: #fff;
+}
+.s{
+  border: #555;
+  border-radius: 10%;
+  margin: 1.5rem 0;
+  margin-left: 72%;
+}
+.p{
+  border: #555;
+  border-radius: 10%;
+  margin: 1.5rem 0;
+  margin-left: 5%;
 }
