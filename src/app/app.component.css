@@ -1,0 +1,9 @@
+.piedPage{
+    border: #555;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #555;
+  color: #FFF;
+  text-align: center;
+  }

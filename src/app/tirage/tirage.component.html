@@ -19,12 +19,32 @@
             <label for="libelle-liste">Nombre de Postulant: </label>
             <input type="number" id="nombre" name="nombre" 
             [(ngModel)]= "tirage.n_tirage"/> <br/>  
+            <label for="file" class="label-file">Importer un fichier</label>
+            <input type="file" (change)="onFileChange($event)" multiple="false" accept=".xlsx"/>
           </div>
         </form>
       </div>
   </div>
   </div>
-  <div class="bton"><div class="import"><button (click)="onImporter()">Importer Une Liste</button></div>
+  <div class="bton"><div class="import"><button (click)="onImporter()">Voire la Liste Importée</button>
+    <!--<table>
+                <thead>
+                   <tr>
+                     <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Numéro</th>
+                    <th>Email</th>
+                 </tr>
+                 </thead>
+                <tbody>
+                  <tr *ngFor="let row of data">
+                  <td *ngFor="let cell of row ">
+                    {{cell}}
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>-->
+                  </div>
   <div class="tries"><button (click)="onlistetrier()" type="submit">Tire Au Sort</button></div></div>
   
 

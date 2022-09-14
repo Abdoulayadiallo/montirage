@@ -14,7 +14,7 @@ import { PageAfficherTirageComponent } from './page-afficher-tirage/page-affiche
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { FooterComponent } from './footer/footer.component';
+import { PostulantComponent } from './postulant/postulant.component';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     DetailsTirageComponent,
     LandingPageComponent,
     PageAfficherTirageComponent,
-    FooterComponent
+    PostulantComponent,
   ],
   imports: [
     HttpClientModule,

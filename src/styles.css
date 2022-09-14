@@ -39,3 +39,7 @@ button {
       display: none;
     }
   }
+.piedPage{
+  border: #555;
+  background-color: #555;
+}

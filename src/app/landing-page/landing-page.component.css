@@ -1,5 +1,6 @@
 landing-block {
-  position: absolute;
+  
+  position: fixed;
   border-radius: 20px / 10px;
 }
 .landing-block img{
@@ -86,15 +87,15 @@ font-size: 16px;
   background-color: #555;
   color: #fff;
 }
-.svt{
-  margin: 1.5rem 0;
+.s{
   border: #555;
-  border-radius:10px;
-  margin-left: 10%;
+  border-radius: 10%;
+  margin: 1.5rem 0;
+  margin-left: 72%;
 }
-.pcd{
-  margin: 1.5rem 0;
+.p{
   border: #555;
-  border-radius:10px;
-  margin-right: 25%;
+  border-radius: 10%;
+  margin: 1.5rem 0;
+  margin-left: 5%;
 }

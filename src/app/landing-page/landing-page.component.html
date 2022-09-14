@@ -10,7 +10,7 @@
        </div>
        <div class="element">
           <h2>Nombre Totales de Tirage</h2>  
-          <div class="circle">30</div> 
+          <div class="circle">6</div> 
        </div>
       
   </div>
@@ -26,27 +26,31 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Liste1</td>
+                    <td>{{postulant.listePostulant.libele}}</td>
                     <td>005</td>
+                    <td><button (click)="ngVoir()">Voir Plus</button></td>
                 </tr>
                 <tr>
-                    <td>Liste2</td>
+                    <td>{{postulant.listePostulant.libele}}</td>
                     <td>0010</td>
+                    <td><button (click)="ngVoir()">Voir Plus</button></td>
                 </tr>
                 <tr>
-                    <td>Liste1</td>
+                    <td>{{postulant.listePostulant.libele}}</td>
                     <td>0015</td>
+                    <td><button (click)="ngVoir()">Voir Plus</button></td>
                 </tr>
                 <tr>
-                    <td>Liste1</td>
+                    <td>{{postulant.listePostulant.libele}}</td>
                     <td>0015</td>
+                    <td><button (click)="ngVoir()">Voir Plus</button></td>
                 </tr>
             </tbody>
         </table> 
     </div>
 </div>
 <div class="bt">
-    <button class="pcd" (click)="onSuivant()"> << précédant</button>
-    <button class="svt" (click)="onPrecedent()">suivant >> </button>
+    <button class="p" (click)="onSuivant()"> << précédant</button>
+    <button class="s" (click)="onPrecedent()">suivant >> </button>
   </div>
   
