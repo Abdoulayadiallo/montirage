@@ -19,22 +19,22 @@
             <input type="number" id="nombre" name="nombre" 
             [(ngModel)]= "tirage.n_tirage"/> <br/>  
           </div>
-          <button type="submit">Tirer au sort</button>
+           <div align="center"><button type="submit" class="submit">Tirer au sort</button></div>
         </form>
         </div>
 <!--Importation-->
         <div class="fomrtImport">
-        <form (ngSubmit)= "onImport()" class="monForm2">
+        <form (ngSubmit)= "ImporterListe()" class="monForm2">
          
           <div>
             <label for="libelle-liste">Libellé Liste: </label>  
-            <input type="text" id="libelle-liste" name="libelle-liste" [(ngModel)]= "listepostulant.libele" >
+            <input type="text" id="libelle-liste" name="libelle-liste"  formControlName="libele" >
           </div>
           <div>
             <label for="file" class="label-file">Importer un fichier</label>
-            <input type="file" (change)="onFileChange($event)" multiple="false" accept=".xlsx"/>
+            <input class="fichierImp" type="file" name="file" formControlName="file" (change)="filechange($event)" multiple="false" accept=".xls"/>
           </div>
-          <button type="submit">Importer</button>
+          <div align="center"><button type="submit" class="submit">Importer</button></div> 
         </form>
       </div>
   </div>

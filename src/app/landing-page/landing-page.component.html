@@ -2,7 +2,6 @@
     <img src="assets/tirage_au_sort.jpg" alt="Tirage photo ">
     <div class="entete">
         <h1> Les Statistiques</h1> 
-        <h2>{{totalRows}}</h2>
        </div> 
     <div id="conteneur">
        <div class="element">
@@ -16,6 +15,10 @@
        </div>
       
   </div>
+  <div class="row">
+    <label for="Search">Search:</label>
+    <input type="text" placeholder="Search" [(ngModel)]= "searchText"/>
+</div>
   <div class="table">
     <h2>Nombre Triées par Liste</h2>
         <table>
@@ -27,13 +30,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let tirage of tirages">
+                <tr *ngFor = "let tirage of tirages | filter:searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index">
                     <td>{{tirage.libele}}</td>
                     <td>{{tirage.libele.length}}</td>
                     <td><button (click)="ngVoir()">Voir Plus</button></td>
                 </tr>
             </tbody>
         </table> 
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
 </div>
 <div class="bt">

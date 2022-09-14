@@ -13,10 +13,11 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { PageAfficherTirageComponent } from './page-afficher-tirage/page-afficher-tirage.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostulantComponent } from './postulant/postulant.component';
 
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
      // import HttpClientModule after BrowserModule.
@@ -34,7 +35,12 @@ import { PostulantComponent } from './postulant/postulant.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    //recherche liste
+    Ng2SearchPipeModule,
+    //pagination
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

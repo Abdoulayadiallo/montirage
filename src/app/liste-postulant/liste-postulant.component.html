@@ -13,8 +13,12 @@
         <th> Libellé</th>
       </tr>
     </thead>
+    <div class="row">
+        <input type="text" placeholder="Search" [(ngModel)]= "searchText"/>
+      </div>
     <tbody>
-      <tr *ngFor = "let postulant of postulants" >
+      
+      <tr *ngFor = "let postulant of postulants|filter:searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index" >
         <td>{{postulant.id_postulant}}</td>
         <td>{{postulant.nom}}</td>
         <td>{{postulant.prenom}}</td>
@@ -23,8 +27,9 @@
         <td>{{postulant.listePostulant.libele}}</td>
       </tr>
     </tbody>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
   </table>
-  <div class="bt">
+  <div class="bt"> 
     <button class="p" (click)="onPrecedent()"><< précédant </button>
      <button class="s" (click)="onSuivant()"> suivant >></button>
    </div>

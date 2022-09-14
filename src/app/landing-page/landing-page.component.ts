@@ -21,6 +21,8 @@ export class LandingPageComponent implements OnInit {
   tirages!: Tirage[];
   listePostulant!: Listepostulant[];
   postulant!: Postulant[];
+searchText: any;
+p: string|number|undefined;
 
 
   constructor(private router:Router,
