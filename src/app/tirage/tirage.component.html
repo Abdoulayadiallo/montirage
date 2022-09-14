@@ -24,11 +24,11 @@
         </div>
 <!--Importation-->
         <div class="fomrtImport">
-        <form (ngSubmit)= "onSubmit()" class="monForm">
+        <form (ngSubmit)= "onImport()" class="monForm2">
          
           <div>
             <label for="libelle-liste">Libellé Liste: </label>  
-            <input type="text" id="libelle-liste" name="libelle-liste" >
+            <input type="text" id="libelle-liste" name="libelle-liste" [(ngModel)]= "listepostulant.libele" >
           </div>
           <div>
             <label for="file" class="label-file">Importer un fichier</label>

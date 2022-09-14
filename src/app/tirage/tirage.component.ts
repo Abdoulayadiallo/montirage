@@ -6,6 +6,7 @@ import { Tirage } from 'src/models/tirage';
 import { ListepostulantService } from '../services/listepostulant.service';
 import { TirageService } from '../services/tirage.service';
 import * as xlsx from 'xlsx';
+import { PostulantService } from '../postulant.service';
 
 @Component({
   selector: 'app-tirage',
@@ -19,9 +20,12 @@ export class TirageComponent implements OnInit {
   listepostulant: Listepostulant = new Listepostulant()
   tirages!: Tirage[];
   listepostulants!: Listepostulant[];
-  postulant!: Postulant[];
+  postulant: Postulant= new Postulant;
   data: [][];
-  constructor(private router: Router,private tirageService:TirageService,private listepostulantService: ListepostulantService) { }
+  constructor(private router: Router,
+    private tirageService:TirageService,
+    private listepostulantService: ListepostulantService,
+    private postulantService:PostulantService) { }
 
   ngOnInit(): void {
     this.getTirage();
@@ -84,5 +88,19 @@ onFileChange(evt: any){
 
   reader.readAsBinaryString(target.files[0]);
 }
+
+//enregirtement 
+
+savePostulant(){
+  this.postulantService.AjouterList(this.postulant,this.listepostulant.libele).subscribe(data =>{
+    console.log(data);
+  },
+  error => console.log(error));
+}
+onImport(){
+  console.log(this.tirage);
+    this.savePostulant();
+}
+
 
 }
