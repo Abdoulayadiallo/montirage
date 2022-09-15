@@ -15,14 +15,12 @@ form{
 }
 .container {
     border: #555 solid;
-    width: 600px;
-  height: 400px;
-  margin-left: 30%;
+    width: 500px;
+  height: 350px;
   background-color: #555;
-  font-size: 20px;
+  font-size: 15px;
   align-content: center;
-  margin-top: 5%;
-  border-radius: 80px / 90px;
+  border-radius: 70px / 80px;
   
 }
   .import{
@@ -33,13 +31,7 @@ form{
 
     
   }
-   .tries{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1.5rem 0;
-    
-  }
+   
   button {
     font-size: 20px;
     display: flex;
@@ -62,12 +54,16 @@ form{
  }
  .fomrtImport{
   border: #555 solid;
-  width: 600px;
-height: 400px;
-margin-left: 30%;
+  width: 500px;
+height: 350px;
 background-color: #555;
-font-size: 20px;
+font-size: 15px;
 align-content: center;
-margin-top: 5%;
-border-radius: 80px / 90px;
+border-radius: 70px / 80px;
+margin-right: 5%;
+ }
+ .formulaire{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
  }

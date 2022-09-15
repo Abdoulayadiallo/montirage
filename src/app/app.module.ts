@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,8 @@ import { PageAfficherTirageComponent } from './page-afficher-tirage/page-affiche
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PostulantComponent } from './postulant/postulant.component';
+import * as fr from '@angular/common/locales/fr';
+import { registerLocaleData } from '@angular/common';
 
 
 @NgModule({
@@ -36,7 +38,12 @@ import { PostulantComponent } from './postulant/postulant.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  
+  providers: [ { provide: LOCALE_ID, useValue: 'fr-FR'}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    registerLocaleData(fr.default);
+  }
+}

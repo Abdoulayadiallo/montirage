@@ -1,8 +1,8 @@
 <div class="landing-block">
-    <img src="assets/tirage_au_sort.jpg" alt="Tirage photo ">
+    <img class="pt" src="assets/tirage_au_sort.jpg" alt="Tirage photo ">
     <div class="entete">
-        <h1> Les Statistiques</h1> 
-        <h2>{{totalRows}}</h2>
+        <h1> Les Statistiques</h1><br>
+       <!----> <h2>{{totalRows}}</h2>
        </div> 
     <div id="conteneur">
        <div class="element">
@@ -27,9 +27,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let tirage of tirages">
-                    <td>{{tirage.libele}}</td>
-                    <td>{{tirage.libele.length}}</td>
+                <tr *ngFor = "let liste of listePostulants">
+                    <td>{{liste.libele}}</td>
+                    <td>{{liste.libele.length}}</td>
                     <td><button (click)="ngVoir()">Voir Plus</button></td>
                 </tr>
             </tbody>

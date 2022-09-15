@@ -22,6 +22,7 @@ export class TirageService {
     return this.httpClient.post(`${this.baseURL2}/${libele}/${n_tirage}`,tirage)
   }
   
+  
 
 
 }

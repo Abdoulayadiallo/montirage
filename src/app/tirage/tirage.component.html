@@ -24,18 +24,18 @@
         </div>
 <!--Importation-->
         <div class="fomrtImport">
-        <form (ngSubmit)= "onImport()" class="monForm2">
-         
-          <div>
-            <label for="libelle-liste">Libellé Liste: </label>  
-            <input type="text" id="libelle-liste" name="libelle-liste" [(ngModel)]= "listepostulant.libele" >
-          </div>
-          <div>
-            <label for="file" class="label-file">Importer un fichier</label>
-            <input type="file" (change)="onFileChange($event)" multiple="false" accept=".xlsx"/>
-          </div>
-          <button type="submit">Importer</button>
-        </form>
+          <form (ngSubmit)= "onImport()" class="monForm2">
+          
+            <div>
+              <label for="libelle-liste">Libellé Liste: </label>  
+              <input type="text" id="libelle-liste" name="libelle-liste" [(ngModel)]= "listepostulant.libele" >
+            </div>
+            <div>
+              <label for="file" class="label-file">Importer un fichier</label>
+              <input type="file" (change)="onFileChange($event)" multiple="false" accept=".xlsx"/>
+            </div>
+            <button type="submit">Importer</button>
+          </form>
       </div>
   </div>
   </div>
