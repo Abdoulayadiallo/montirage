@@ -1,4 +1,4 @@
-import { Listepostulant } from "./listepostulant";
+
 import { Postulant } from "./postulant";
 
 export class Tirage {

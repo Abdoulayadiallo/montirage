@@ -25,21 +25,29 @@ button {
     transform: translate(1px, 1px);
     box-shadow: lightgray 0 0 5px;
   }
-  @media screen and (max-width: 1024px){
-    h1{
-      color: #339;
-    }
+  @media screen and (max-width: 900px){
     *{
+      color: #FFF;
+      font-size: medium;
       width: auto;
+      height: auto;
+
     }
-    nav ul {
-      flex-direction: column;
+   .menu
+    {
+    list-style: none;
+    margin-top: 0;
+    margin-top: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
     }
-    img{
-      display: none;
+    .p{
+      width: 110px;
+      float: right;
+      margin-left: 15px;
+    }
+    .p{
+    display: none;
     }
   }
-.piedPage{
-  border: #555;
-  background-color: #555;
-}

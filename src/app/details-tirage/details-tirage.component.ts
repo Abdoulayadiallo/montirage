@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Tirage } from 'src/models/tirage';
 import { TirageService } from '../services/tirage.service';
+import { Listepostulant } from 'src/models/listepostulant';
 
 @Component({
   selector: 'app-details-tirage',
@@ -36,6 +37,12 @@ p: string|number|undefined;
 
   onPrecedent(): void {
     this.router.navigateByUrl('')
+}
+listepostulant: Listepostulant = new Listepostulant;
+onView():void {
+  this.router.navigateByUrl(`listePostulant/${this.listepostulant.libele}`);
+    
+
 }
 
 }

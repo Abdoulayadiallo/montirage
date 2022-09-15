@@ -1,7 +1,12 @@
 <div class="landing-block">
-    <img src="assets/tirage_au_sort.jpg" alt="Tirage photo ">
+    <img class="pt" src="assets/tirage_au_sort.jpg" alt="Tirage photo ">
     <div class="entete">
+<<<<<<< HEAD
         <h1> Les Statistiques</h1> 
+=======
+        <h1> Les Statistiques</h1><br>
+       <!----> <h2>{{totalRows}}</h2>
+>>>>>>> 07806a7acefa3a25cbcab3f632aaa784f69970c2
        </div> 
     <div id="conteneur">
        <div class="element">
@@ -30,9 +35,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let tirage of tirages | filter:searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index">
-                    <td>{{tirage.libele}}</td>
-                    <td>{{tirage.libele.length}}</td>
+
+                <tr *ngFor = "let liste of listePostulants | filter:searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index">
+                    <td>{{liste.libele}}</td>
+                    <td>{{liste.libele.length}}</td>
+
                     <td><button (click)="ngVoir()">Voir Plus</button></td>
                 </tr>
             </tbody>

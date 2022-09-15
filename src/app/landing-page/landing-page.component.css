@@ -63,6 +63,7 @@ img{
   margin-right: 75px;
   margin-top: 20px;
   margin-bottom: 24px;
+  
 }
 
 .table{
@@ -87,12 +88,15 @@ font-size: 16px;
   background-color: #555;
   color: #fff;
 }
-.bt{
-  border: 1px  solid #555;
-  padding: 20px;
+.s{
+  border: #555;
+  border-radius: 10%;
+  margin: 1.5rem 0;
+  margin-left: 72%;
 }
-a{
-  background-color: #555;
-  text-decoration: none;
-  padding: 5px;
+.p{
+  border: #555;
+  border-radius: 10%;
+  margin: 1.5rem 0;
+  margin-left: 5%;
 }

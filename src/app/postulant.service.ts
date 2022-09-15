@@ -11,6 +11,7 @@ export class PostulantService {
   private baseUrl = 'http://localhost:8080/API/Postulant';
 
   constructor(private httpClient: HttpClient) { }
+  
   getPostulantsList(): Observable<Postulant[]> {
     return this.httpClient.get<Postulant[]>(`${this.baseUrl}/Afficher`);
   }

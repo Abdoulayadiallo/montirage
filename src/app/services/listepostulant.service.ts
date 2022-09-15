@@ -9,19 +9,19 @@ import { Input } from '@angular/core';
 })
 export class ListepostulantService {
   @Input() listepostulant!: Listepostulant;
-
+  listePostulants!:Listepostulant[];
+//connexion a la backend
   private baseURL = "http://localhost:8080/ListePostulant/Afficher"
 
   constructor(private httpClient: HttpClient) { }
-
+//methode pour recuperer la liste des postulants
   getPostulantList():Observable<Listepostulant[]>{
     return this.httpClient.get<Listepostulant[]>(`${this.baseURL}`)
   }
 
-  
+  //une liste par lisbelle
   parlibelle(l: string):void{
-   //const liste = this.listepostulant.find(this.listepostulant => this.listepostulant.libele === l);
-
+   const postulantListes = this.listePostulants.find(postulantListes => postulantListes.libele === l);
 
   }
 }
