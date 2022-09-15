@@ -17,7 +17,7 @@ export class PostulantService {
   AjouterList(postulant:Postulant,libele:string){
     return this.httpClient.post(`${this.baseUrl}/ajoute_postulant/${libele}`,postulant);
   }
-  ImportList(file:any,libele:string):Observable<Object>{
+  ImportList(libele:string,file:any):Observable<Object>{
     let data = new FormData();
     data.append("file",file)
     return this.httpClient.post(`${this.baseUrl}/ajoute_postulant/${libele}`,data);

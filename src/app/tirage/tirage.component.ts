@@ -8,7 +8,6 @@ import { TirageService } from '../services/tirage.service';
 import * as xlsx from 'xlsx';
 import { PostulantService } from '../postulant.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tirage',
@@ -17,10 +16,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TirageComponent implements OnInit {
 
-formmodule!:FormGroup;
+formmodule!: FormGroup;
 file:any;
 liste!:Listepostulant;
+//liste:Listepostulant=new Listepostulant();
 
+monLibelle:any;
+
+
+
+  Libele:any
   tirage: Tirage = new Tirage();
   choix:any;
   listepostulant: Listepostulant = new Listepostulant()
@@ -34,7 +39,7 @@ liste!:Listepostulant;
     private postulantService:PostulantService,
     /****** */
     private formB:FormBuilder,
-    private http:HttpClient
+
     /*************** */) { }
 
   ngOnInit(): void {
@@ -42,7 +47,7 @@ liste!:Listepostulant;
     /**************** */
     this.formmodule=this.formB.group({
       libele:['',Validators.required],
-      file:['',Validators.required]
+      file:['',Validators.required],
     })
     /************************ */
 
@@ -110,7 +115,7 @@ onFileChange(evt: any){
 //enregistement 
 
 savePostulant(){
-  this.postulantService.AjouterList(this.postulant,this.liste.libele).subscribe(data =>{
+  this.postulantService.AjouterList(this.postulant,this.listepostulant.libele).subscribe(data =>{
     console.log(data);
   },
   error => console.log(error));
@@ -126,7 +131,9 @@ filechange(e:any){
 }
 ImporterListe(){
 this.liste=this.formmodule.value
-this.postulantService.ImportList(this.file,this.listepostulant.libele).subscribe(data =>{
+this.postulantService.ImportList(this.listepostulant.libele,this.file).subscribe(data =>{
+ 
+  console.log("------------------------------- "+this.monLibelle)
   this.formmodule.reset();
 });
 /********************** */
