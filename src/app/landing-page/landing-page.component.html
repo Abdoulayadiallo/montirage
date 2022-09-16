@@ -1,8 +1,10 @@
 <div class="landing-block">
     <img class="pt" src="assets/tirage_au_sort.jpg" alt="Tirage photo ">
     <div class="entete">
+
         <h1> Les Statistiques</h1><br>
-       <!----> <h2>{{totalRows}}</h2>
+       
+
        </div> 
     <div id="conteneur">
        <div class="element">
@@ -30,7 +32,10 @@
             </thead>
             <tbody>
 
+<<<<<<< HEAD
                 <tr *ngFor = "let liste of listePostulants ">
+=======
+                <tr *ngFor = "let liste of listePostulants | filter:searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index">
                     <td>{{liste.libele}}</td>
                     <td>{{liste.libele.length}}</td>
 
@@ -38,7 +43,7 @@
                 </tr>
             </tbody>
         </table> 
-        
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
 </div>
   

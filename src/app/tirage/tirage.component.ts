@@ -7,6 +7,7 @@ import { ListepostulantService } from '../services/listepostulant.service';
 import { TirageService } from '../services/tirage.service';
 import * as xlsx from 'xlsx';
 import { PostulantService } from '../postulant.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tirage',
@@ -15,6 +16,16 @@ import { PostulantService } from '../postulant.service';
 })
 export class TirageComponent implements OnInit {
 
+formmodule!: FormGroup;
+file:any;
+liste:Listepostulant;
+//liste:Listepostulant=new Listepostulant();
+
+monLibelle:any;
+
+
+
+  Libele:any
   tirage: Tirage = new Tirage();
   choix:any;
   listepostulant: Listepostulant = new Listepostulant()
@@ -25,9 +36,22 @@ export class TirageComponent implements OnInit {
   constructor(private router: Router,
     private tirageService:TirageService,
     private listepostulantService: ListepostulantService,
-    private postulantService:PostulantService) { }
+    private postulantService:PostulantService,
+    /****** */
+    private formB:FormBuilder,
+
+    /*************** */) { }
 
   ngOnInit(): void {
+
+    /**************** */
+    this.formmodule=this.formB.group({
+      libele:['',Validators.required],
+      dateListe:['', Validators.required],
+      file:['',Validators.required],
+    })
+    /************************ */
+
     this.getTirage();
     this.getListePostulant();
   }
@@ -64,35 +88,10 @@ export class TirageComponent implements OnInit {
     this.router.navigateByUrl('PostulantTriées')
 }
 
-onImporter(): void {
-  this.router.navigateByUrl('Importation')
-}
-
-onFileChange(evt: any){
-  const target: DataTransfer =  <DataTransfer>(evt.target);
-
-  if(target.files.length !== 1) throw new Error('mauvais fichier');
-
-  const reader: FileReader  = new FileReader();
-
-  reader.onload = (e:any) => {
-    const bstr:String = e.target.result;
-
-    const wb: xlsx.WorkBook = xlsx.read(bstr, {type: 'binary' });
-    const wsname : string = wb.SheetNames[0];
-    const ws: xlsx.WorkSheet= wb.Sheets[wsname];
-    console.log(ws);
-    this.data = (xlsx.utils.sheet_to_json(ws, {header: 1 }));
-    console.log(this.data);
-  };
-
-  reader.readAsBinaryString(target.files[0]);
-}
-
-//enregirtement 
+//enregistement 
 
 savePostulant(){
-  this.postulantService.AjouterList(this.postulant,this.listepostulant.libele).subscribe(data =>{
+  this.postulantService.AjouterList(this.postulant,this.Libele).subscribe(data =>{
     console.log(data);
   },
   error => console.log(error));
@@ -101,6 +100,27 @@ onImport(){
   console.log(this.tirage);
     this.savePostulant();
 }
+
+/************* *******/
+filechange(e:any){
+  
+  this.file=e.target["files"][0]
+  console.log(e.target['files'][0].name+" "+ e.target['files'][0].length);
+}
+ImporterListe(){
+this.liste=this.formmodule.value
+
+ 
+  console.log("------------------------------- "+this.Libele)
+
+this.postulantService.ImportList(this.liste.libele,this.file).subscribe(data =>{
+
+  this.formmodule.reset();
+});
+/********************** */
+}
+
+
 
 
 }

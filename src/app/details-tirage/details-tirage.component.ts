@@ -10,7 +10,9 @@ import { Listepostulant } from 'src/models/listepostulant';
   styleUrls: ['./details-tirage.component.css']
 })
 export class DetailsTirageComponent implements OnInit {
-  tirages!: Tirage[];
+tirages!: Tirage[];
+searchText: any;
+p: string|number|undefined;
 
   constructor(private router:Router,
     private tirageService:TirageService) { }

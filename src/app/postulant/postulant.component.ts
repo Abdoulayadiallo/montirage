@@ -10,7 +10,7 @@ import { TirageComponent } from '../tirage/tirage.component';
 export class PostulantComponent{
   tirage!: TirageComponent;
   ngImport():void{
-    this.tirage.onFileChange;
+    // this.tirage.onFileChange;
   }
 }
   

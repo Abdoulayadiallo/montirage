@@ -15,9 +15,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostulantComponent } from './postulant/postulant.component';
 import * as fr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
-
-
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+>>>>>>> aaf1526673e0e325383a5c70030f97ac813d0525
 @NgModule({
   declarations: [
      // import HttpClientModule after BrowserModule.
@@ -36,7 +36,10 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-   
+    //recherche liste
+    Ng2SearchPipeModule,
+    //pagination
+    NgxPaginationModule
   ],
   
   providers: [],
