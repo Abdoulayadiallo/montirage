@@ -19,6 +19,7 @@
   </div>
   <div class="row">
     <label for="Search">Search:</label>
+    <input type="text" placeholder="Search" [(ngModel)]= "searchText"/>
 </div>
   <div class="table">
     <h2>Nombre Triées par Liste</h2>
@@ -32,10 +33,8 @@
             </thead>
             <tbody>
 
-<<<<<<< HEAD
-                <tr *ngFor = "let liste of listePostulants ">
-=======
-                <tr *ngFor = "let liste of listePostulants | filter:searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index">
+
+                <tr *ngFor = "let liste of listePostulants | filter:searchText| paginate:{itemsPerPage:3,currentPage: p}; let i= index">
                     <td>{{liste.libele}}</td>
                     <td>{{liste.libele.length}}</td>
 

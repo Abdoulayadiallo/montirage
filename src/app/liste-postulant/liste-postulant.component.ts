@@ -53,22 +53,10 @@ p: any;
       this.postulants = data;
     });
   }
-<<<<<<< HEAD
 
   filechange(e:any){
     this.file=e.target["files"][0]
   }
-=======
-  filechange(e:any){
-    this.file=e.target["files"][0]
-  }
-ImporterListe(){
-  this.liste=this.formmodule.value
-  this.postulantService.ImportList(this.file,this.liste.libele).subscribe(data =>{
-    this.formmodule.reset();
-  });
-}
->>>>>>> aaf1526673e0e325383a5c70030f97ac813d0525
 
 
 

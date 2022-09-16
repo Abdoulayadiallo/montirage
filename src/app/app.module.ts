@@ -7,6 +7,8 @@ import { MonTirageComponent } from './mon-tirage/mon-tirage.component';
 import { HeaderComponent } from './header/header.component';
 import { TirageComponent } from './tirage/tirage.component';
 import { DetailsTirageComponent } from './details-tirage/details-tirage.component';
+import { ListePostulantComponent } from './liste-postulant/liste-postulant.component';
+import { LandingPageComponent } from './landing-page/landing-page.component'; 
 
 import { PageAfficherTirageComponent } from './page-afficher-tirage/page-afficher-tirage.component';
 
@@ -15,20 +17,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostulantComponent } from './postulant/postulant.component';
 import * as fr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
->>>>>>> aaf1526673e0e325383a5c70030f97ac813d0525
+
+
 @NgModule({
   declarations: [
      // import HttpClientModule after BrowserModule.
-    AppComponent,
-    MonTirageComponent,
-    HeaderComponent,
-    TirageComponent,
-    DetailsTirageComponent,
-    PageAfficherTirageComponent,
-    PostulantComponent,
-    LandingPageComponent,
+     AppComponent,
+     MonTirageComponent,
+     HeaderComponent,
+     ListePostulantComponent,
+     TirageComponent,
+     DetailsTirageComponent,
+     LandingPageComponent,
+     PageAfficherTirageComponent,
+     PostulantComponent,
+
   ],
   imports: [
     HttpClientModule,
@@ -43,7 +49,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ],
   
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { 
   constructor() {

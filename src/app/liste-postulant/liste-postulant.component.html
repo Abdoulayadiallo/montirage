@@ -2,6 +2,9 @@
   <h1>La liste des Postulants</h1>
 </div>
 <div class="container">
+  <div class="row">
+    <input type="text" placeholder="Search" [(ngModel)]= "searchText"/>
+  </div>
   <table class ="table">
     <thead>
       <tr>
@@ -13,12 +16,9 @@
         <th> Libellé</th>
       </tr>
     </thead>
-    <div class="row">
-        <input type="text" placeholder="Search" [(ngModel)]= "searchText"/>
-      </div>
     <tbody>
       
-      <tr *ngFor = "let postulant of postulants|filter:searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index" >
+      <tr *ngFor = "let postulant of postulants| filter: searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index" >
         <td>{{postulant.id_postulant}}</td>
         <td>{{postulant.nom}}</td>
         <td>{{postulant.prenom}}</td>
