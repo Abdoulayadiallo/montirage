@@ -21,8 +21,11 @@ export class LandingPageComponent implements OnInit {
   tirages!: Tirage[];
   listePostulants!: Listepostulant[];
   postulant!: Postulant[];
-searchText: any;
-p: string|number|undefined;
+  searchText: any;
+  p: string|number|undefined;
+  listepostulant: any;
+  public Contenu:any = [];
+  nombretotaliste:number;
 
 
   constructor(private router:Router,
@@ -31,8 +34,10 @@ p: string|number|undefined;
     private listePostulantService:ListepostulantService) { }
 
   ngOnInit(): void {
+    this.NomTotalListe();
     this.getTirage();
     this.getListePostulant();
+    this.CompterTirageParListe();
    const libeleListe = this.activateroute.snapshot.params['libelle'];
    const liste= this.listePostulantService.parlibelle(libeleListe);
   }
@@ -47,14 +52,27 @@ private getListePostulant(){
   })
 }
  
-listepostulant: Listepostulant = new Listepostulant;
+
 ngVoir(): void{
-  this.listePostulantService.parlibelle;
-  this.router.navigateByUrl(`listePostulant/${this.listepostulant.libele}`);
+  this.router.navigateByUrl(`listePostulant/listePostulant/${this.listepostulant.libele}`);
 }
 
   //Compter le nombre tolal de tirage
   get totalRows(): number {
     return this.tirages.length;
+  }
+
+  CompterTirageParListe(){
+    this.tirageService.CompteParListe()
+    .subscribe(data =>{
+      this.Contenu = data;
+    })
+  }
+  //Nombre total de liste tirés
+  NomTotalListe():any {
+    this.tirageService.NombredeListeTirer().subscribe(data => {
+      this.nombretotaliste = data
+      console.log(data)
+    })
   }
 }

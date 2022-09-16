@@ -7,7 +7,7 @@
   <input type="text" placeholder="Search" [(ngModel)]= "searchText"/>
 </div>
 
-
+<h2>nombre Totales:{{totalRows}}</h2>
 
 <table class = "table table-striped table-bordered">
   <thead>
@@ -27,13 +27,8 @@
           <td> {{ tirage.libele}} </td>
           <td> {{ tirage.date}} </td>
           <td> {{ tirage.n_tirage}} </td>
-          <td><button (click)="onView()"> Voir Plus</button></td>
+          <td><button> Voir Plus</button></td>
        
       </tr>
   </tbody>
-</table>
-<pagination-controls (pageChange)="p=$event"></pagination-controls>
-<div class="bt">
-   <button class="p" (click)="onPrecedent()"><< précédant </button>
-    <button class="s" (click)="onSuivant()"> suivant >></button>
-  </div>
+

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path:'PostulantTriées',component:PageAfficherTirageComponent},
   {path: 'Importation', component:PostulantComponent},
-  {path:'listePostulant/:libelle', component:ListePostulantComponent}
+  {path:'listePostulant/listePostulant/:libelle', component:ListePostulantComponent}
 ];
 
 @NgModule({

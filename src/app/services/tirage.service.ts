@@ -7,22 +7,23 @@ import { Tirage } from 'src/models/tirage';
   providedIn: 'root'
 })
 export class TirageService {
-  private baseURL = "http://localhost:8080/Tirage/AfficherTirage";
-
-  private baseURL2 = "http://localhost:8080/Tirage/CreerTirage";
-
+  private baseURL = "http://localhost:8080/Tirage";
 
   constructor(private httpClient : HttpClient) { }
 
   getTirageList():Observable<Tirage[]>{
-    return this.httpClient.get<Tirage[]>(`${this.baseURL}`)
+    return this.httpClient.get<Tirage[]>(`${this.baseURL}/AfficherTirage`)
   }
 
   CreateTirage(tirage:Tirage, libele:string,n_tirage:number): Observable<Object>{
-    return this.httpClient.post(`${this.baseURL2}/${libele}/${n_tirage}`,tirage)
+    return this.httpClient.post(`${this.baseURL}/CreerTirage/${libele}/${n_tirage}`,tirage)
+  }
+  CompteParListe():Observable<Object>{
+    return this.httpClient.get(`${this.baseURL}/compteParListe`)
   }
   
-  
-
+  NombredeListeTirer() : Observable<number>{
+    return this.httpClient.get<number>(`${this.baseURL}/NombreListeTire`)
+  }
 
 }
