@@ -17,10 +17,10 @@ export class PostulantService {
   AjouterList(postulant:Postulant,libele:string){
     return this.httpClient.post(`${this.baseUrl}/ajoute_postulant/${libele}`,postulant);
   }
-  ImportList(libele:string,file:any):Observable<Object>{
+  ImportList(libele:string,file:any):Observable<void>{
     let data = new FormData();
     data.append("file",file)
-    return this.httpClient.post(`${this.baseUrl}/ajoute_postulant/${libele}`,data);
+    return this.httpClient.post<void>(`${this.baseUrl}/ajoute_postulant/${libele}`,data);
   }
 
 }
