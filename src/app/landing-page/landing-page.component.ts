@@ -44,13 +44,7 @@ private getListePostulant(){
     this.listePostulants = data;
   })
 }
-  onSuivant(): void {
-    this.router.navigateByUrl('')
-}
-
-onPrecedent(): void {
-  this.router.navigateByUrl('')
-}
+ 
 listepostulant: Listepostulant = new Listepostulant;
 ngVoir(): void{
   this.listePostulantService.parlibelle;

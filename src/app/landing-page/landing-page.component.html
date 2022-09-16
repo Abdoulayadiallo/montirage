@@ -12,10 +12,12 @@
        <div class="element">
           <h2>Nombre Totales de Tirage</h2>  
           <div class="circle">{{totalRows}}</div> 
-
        </div>
       
   </div>
+  <div class="row">
+    <label for="Search">Search:</label>
+</div>
   <div class="table">
     <h2>Nombre Triées par Liste</h2>
         <table>
@@ -27,17 +29,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let liste of listePostulants">
+
+                <tr *ngFor = "let liste of listePostulants ">
                     <td>{{liste.libele}}</td>
                     <td>{{liste.libele.length}}</td>
+
                     <td><button (click)="ngVoir()">Voir Plus</button></td>
                 </tr>
             </tbody>
         </table> 
+        
     </div>
 </div>
-<div class="bt">
-    <button class="p" (click)="onSuivant()"> << précédant</button>
-    <button class="s" (click)="onPrecedent()">suivant >> </button>
-  </div>
   
