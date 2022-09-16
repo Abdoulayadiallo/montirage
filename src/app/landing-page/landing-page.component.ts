@@ -9,6 +9,7 @@ import { PostulantService } from '../postulant.service';
 import { TirageService } from '../services/tirage.service';
 import { Listepostulant } from 'src/models/listepostulant';
 import { ListepostulantService } from '../services/listepostulant.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-landing-page',
@@ -26,6 +27,7 @@ export class LandingPageComponent implements OnInit {
   listepostulant: any;
   public Contenu:any = [];
   nombretotaliste:number;
+  lienlistetirage:Observable<any>;
 
 
   constructor(private router:Router,
@@ -38,8 +40,12 @@ export class LandingPageComponent implements OnInit {
     this.getTirage();
     this.getListePostulant();
     this.CompterTirageParListe();
-   const libeleListe = this.activateroute.snapshot.params['libelle'];
-   const liste= this.listePostulantService.parlibelle(libeleListe);
+    
+   const IdListe = this.activateroute.snapshot.params['id_liste_postulant'];
+
+
+   this.lienlistetirage = this.tirageService.LienParIdListe(IdListe)
+
   }
   private getTirage(){
     this.tirageService.getTirageList().subscribe(data => {
@@ -66,6 +72,9 @@ ngVoir(): void{
     this.tirageService.CompteParListe()
     .subscribe(data =>{
       this.Contenu = data;
+      this.lienlistetirage =this.Contenu.length;
+      console.log(data);
+
     })
   }
   //Nombre total de liste tirés
@@ -75,4 +84,11 @@ ngVoir(): void{
       console.log(data)
     })
   }
+  /*
+  RecupererListeParId(){
+    this.tirageService.LienParIdListe(IdListe).subscribe({
+    })
+  }
+  */
+  
 }

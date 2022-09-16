@@ -25,5 +25,9 @@ export class TirageService {
   NombredeListeTirer() : Observable<number>{
     return this.httpClient.get<number>(`${this.baseURL}/NombreListeTire`)
   }
+  //acces par liste id
+  LienParIdListe(id_liste:number):Observable<Tirage[]>{
+    return this.httpClient.get<Tirage[]>(`${this.baseURL}/AfficherListeParId/${id_liste}`)
+  }
 
 }

@@ -22,7 +22,7 @@
   
   <tbody>
       
-      <tr *ngFor = "let tirage of tirages |filter:searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index" >
+      <tr *ngFor = "let tirage of   lienlistetirage | async |filter:searchText| paginate:{itemsPerPage:5,currentPage: p}; let i= index" >
           <td> {{ tirage.id_tirage}} </td>
           <td> {{ tirage.libele}} </td>
           <td> {{ tirage.date}} </td>

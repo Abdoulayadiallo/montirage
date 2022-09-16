@@ -10,11 +10,11 @@ import { TirageComponent } from './tirage/tirage.component';
 const routes: Routes = [
   { path: 'listePostulant', component: ListePostulantComponent },
   { path: 'tirage', component: TirageComponent},
-  { path: 'detailsTirage', component: DetailsTirageComponent },
+  { path: 'detailsTirage/:id_liste_postulant', component: DetailsTirageComponent },
   { path: '', component: LandingPageComponent },
   { path:'PostulantTriées',component:PageAfficherTirageComponent},
   {path: 'Importation', component:PostulantComponent},
-  {path:'listePostulant/listePostulant/:libelle', component:ListePostulantComponent}
+  //{path:'detailsTirage/:libelle', component:ListePostulantComponent}
 ];
 
 @NgModule({

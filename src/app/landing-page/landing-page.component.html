@@ -35,10 +35,10 @@
 
 
                 <tr *ngFor = "let liste of Contenu | filter:searchText| paginate:{itemsPerPage:3,currentPage: p}; let i= index">
-                    <td>{{liste[0]}}</td>
                     <td>{{liste[1]}}</td>
+                    <td>{{liste[2]}}</td>
 
-                    <td><button (click)="ngVoir()">Voir Plus</button></td>
+                    <td><a [routerLink]="['/detailsTirage', liste[0]]">Voir Plus</a></td>
                 </tr>
             </tbody>
         </table> 
