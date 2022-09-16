@@ -131,9 +131,9 @@ filechange(e:any){
 }
 ImporterListe(){
 this.liste=this.formmodule.value
-this.postulantService.ImportList(this.listepostulant.libele,this.file).subscribe(data =>{
+this.postulantService.ImportList(this.Libele,this.file).subscribe(data =>{
  
-  console.log("------------------------------- "+this.monLibelle)
+  console.log("------------------------------- "+this.Libele)
   this.formmodule.reset();
 });
 /********************** */

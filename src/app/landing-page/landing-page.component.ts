@@ -18,17 +18,11 @@ import { ListepostulantService } from '../services/listepostulant.service';
 export class LandingPageComponent implements OnInit {
     
 
-<<<<<<< HEAD
   tirages!: Tirage[];
-  listePostulant!: Listepostulant[];
+  listePostulants!: Listepostulant[];
   postulant!: Postulant[];
 searchText: any;
 p: string|number|undefined;
-=======
-  tirages: Tirage[];
-  listePostulants: Listepostulant[];
-  postulant: Postulant[];
->>>>>>> 07806a7acefa3a25cbcab3f632aaa784f69970c2
 
 
   constructor(private router:Router,
