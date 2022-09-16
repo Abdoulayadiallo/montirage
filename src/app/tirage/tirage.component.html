@@ -11,7 +11,7 @@
           <div>
             <label for="libelle-liste">Libellé Liste: </label>  
             <select [(ngModel)]="choix" name="Libellé" id="id-liste"><br>
-              <option *ngFor= "let listepostulant of listepostulants" [ngValue]="choix">{{listepostulant.libele}}</option>
+              <option *ngFor= "let listepostulant of listepostulants" [ngValue]="listepostulant.libele">{{listepostulant.libele}}</option>
             </select>
           </div>
           <div>
