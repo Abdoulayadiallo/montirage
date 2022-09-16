@@ -6,40 +6,42 @@
           <div>
             <label for="libelle-tirage">Libellé Tirage: </label>  
             <input type="text" id="libelle-tirage" name="libelle-tirage" 
-            [(ngModel)]= "tirage.libele" placeholder="libelle tirage"/>  
+            [(ngModel)]= "tirage.libele" />  
           </div>
           <div>
             <label for="libelle-liste">Libellé Liste: </label>  
             <select [(ngModel)]="choix" name="Libellé" id="id-liste"><br>
-              <option *ngFor= "let listepostulant of listepostulants" [ngValue]="listepostulant.libele">{{listepostulant.libele}}</option>
+              <option *ngFor= "let listepostulant of listepostulants" [ngValue]="choix">{{listepostulant.libele}}</option>
             </select>
           </div>
           <div>
             <label for="libelle-liste">Nombre de Postulant: </label>
             <input type="number" id="nombre" name="nombre" 
-            [(ngModel)]= "tirage.n_tirage" placeholder="nombre postulant"/> <br/>  
+            [(ngModel)]= "tirage.n_tirage"/> <br/>  
           </div>
            <div align="center"><button type="submit" class="submit">Tirer au sort</button></div>
         </form>
         </div>
-<!--Importation-->
+        <!---------------------------------------------Importation---------------------------------------------->
         <div class="fomrtImport">
-        <form (ngSubmit)= "ImporterListe()" class="monForm2">
+        <form  class="monForm2" [formGroup]="formmodule">
          
           <div>
             <label for="libelle-liste">Libellé Liste: </label>  
-            <input type="text" name="Libele" [(ngModel)]="Libele" formControlName="Libele" >
+
+            <input type="text" name="libele" formControlName="libele" >
+
           </div>
           <div>
             <label for="file" class="label-file">Importer un fichier</label>
             <input class="fichierImp" type="file" name="file" formControlName="file" (change)="filechange($event)" multiple="false" accept=".xls"/>
           </div>
-          <div align="center"><button type="submit" class="submit">Importer</button></div> 
+          <div align="center"><button (click)="ImporterListe()" type="submit" class="submit">Importer</button></div> 
         </form>
       </div>
   </div>
   </div>
-  <div class="bton"><div class="import"><button (click)="onImporter()">Voire la Liste Importée</button>
+  <div class="bton"><div class="import"><button>Voire la Liste Importée</button>
     <!--<table>
                 <thead>
                    <tr>
