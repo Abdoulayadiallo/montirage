@@ -73,7 +73,7 @@ ngVoir(): void{
     .subscribe(data =>{
       this.Contenu = data;
       this.lienlistetirage =this.Contenu.length;
-      console.log(data);
+      console.log("mes données 2222222222222222222222+++",data);
 
     })
   }
@@ -81,7 +81,7 @@ ngVoir(): void{
   NomTotalListe():any {
     this.tirageService.NombredeListeTirer().subscribe(data => {
       this.nombretotaliste = data
-      console.log(data)
+      console.log("mes données==================",data)
     })
   }
   /*
