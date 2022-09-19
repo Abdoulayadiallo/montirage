@@ -9,10 +9,12 @@ import { Postulanttire } from 'src/models/postulanttire';
 export class PostulanttireService {
 
   private Url = "http://localhost:8080/PostulantTire/compte"
+  private URL = "http://localhost:8080/API/Postulant/Total"
 
   constructor(private httpClient:HttpClient) { }
 
   getNombreParTirage():Observable<Postulanttire[]>{
     return this.httpClient.get<Postulanttire[]>(`${this.Url}`)
   }
+ 
 }

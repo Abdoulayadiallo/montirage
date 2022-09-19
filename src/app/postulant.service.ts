@@ -9,6 +9,7 @@ import { Postulant } from 'src/models/postulant';
 })
 export class PostulantService {
   private baseUrl = 'http://localhost:8080/API/Postulant';
+  private URL = "http://localhost:8080/API/Postulant/Total"
 
   constructor(private httpClient: HttpClient) { }
   
@@ -22,6 +23,9 @@ export class PostulantService {
     let data = new FormData();
     data.append("file",file)
     return this.httpClient.post<void>(`${this.baseUrl}/ajoute_postulant/${libele}`,data);
+  }
+  getNombreTotalPostulant():Observable<number>{
+    return this.httpClient.get<number>(`${this.URL}`)
   }
 
 }

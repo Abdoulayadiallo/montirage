@@ -28,18 +28,22 @@ export class LandingPageComponent implements OnInit {
   public Contenu:any = [];
   nombretotaliste:number;
   lienlistetirage:Observable<any>;
+  nombreTotalPostulant:number;
 
 
   constructor(private router:Router,
     private tirageService:TirageService,
     private activateroute:ActivatedRoute,
-    private listePostulantService:ListepostulantService) { }
+    private listePostulantService:ListepostulantService,
+    private postulantService: PostulantService,) { }
 
   ngOnInit(): void {
     this.NomTotalListe();
     this.getTirage();
     this.getListePostulant();
     this.CompterTirageParListe();
+    this.getNombreTotalPostulant();
+  
     
    const IdListe = this.activateroute.snapshot.params['id_liste_postulant'];
 
@@ -67,6 +71,7 @@ ngVoir(): void{
   get totalRows(): number {
     return this.tirages.length;
   }
+  
 
   CompterTirageParListe(){
     this.tirageService.CompteParListe()
@@ -90,5 +95,11 @@ ngVoir(): void{
     })
   }
   */
+  getNombreTotalPostulant(){
+  this.postulantService.getNombreTotalPostulant().subscribe(data =>{
+  this.nombreTotalPostulant = data
+  console.log(data)
+})
+  }
   
 }
