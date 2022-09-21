@@ -31,6 +31,7 @@ form{
   border-radius: 10%;
   width: 200px;
      height: 25px;
+     cursor: pointer;
   }
   
  input, label, select {
@@ -90,4 +91,7 @@ padding-top: 5px;
   flex-direction: row;
   align-content: center; 
 
+}
+.swal2-styled.swal2-confirm {
+  background-color: #555;
 }

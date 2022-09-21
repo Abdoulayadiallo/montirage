@@ -8,6 +8,7 @@ import { TirageService } from '../services/tirage.service';
 import * as xlsx from 'xlsx';
 import { PostulantService } from '../postulant.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tirage',
@@ -108,6 +109,7 @@ filechange(e:any){
   console.log(e.target['files'][0].name+" "+ e.target['files'][0].length);
 }
 ImporterListe(){
+  
 this.liste=this.formmodule.value
 
  
@@ -117,8 +119,23 @@ this.postulantService.ImportList(this.liste.libele,this.file).subscribe(data =>{
 
   this.formmodule.reset();
 });
-/********************** */
 }
+/********************** */
+
+alertPourTirage() {
+  if(this.tirage.libele =='' || this.choix=='' || this.tirage.n_tirage == null){
+    Swal.fire('Desole...', 'Tirage non effectué', 'error')
+  }
+  else{
+    Swal.fire('Merci...', 'Tirage effectué avec succès', 'success');
+  }
+}
+
+// alertPourImport(){
+//   if(this.libele=='' || this.file==''){
+//   Swal.fire('Desole...', 'Fichier non Importé', 'error')
+// }
+// }
 
 
 
